@@ -6,8 +6,8 @@ plugins {
     id("maven-publish")
 }
 
-group = "com.github.ashishkujoy.greeting"
-version = "0.0.5"
+group = "io.github.ashishkujoy.embeddedKafka"
+version = "0.0.1"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 
@@ -32,8 +32,8 @@ dependencies {
 
 gradlePlugin {
     val greeting by plugins.creating {
-        id = "com.github.ashishkujoy.greeting"
-        implementationClass = "com.github.ashishkujoy.MyPlugin"
+        id = "io.github.ashishkujoy.embeddedKafka"
+        implementationClass = "com.github.ashishkujoy.EmbeddedkafkaPlugin"
         version = version
     }
 }

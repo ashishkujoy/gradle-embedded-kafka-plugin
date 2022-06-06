@@ -1,6 +1,5 @@
 ### Embedded Kafka Plugin
-This plugin creates a Kotlin source set with name `integrationTest` and two tasks
-`integrationTest` and `cleanIntegrationTestEnvironment`.
+This plugin provides two tasks `startEmbeddedKafka` and `stopEmbeddedKafka` for starting and stoping embedded kafka.
 
 #### Using locally
 For using plugin locally we first need to build and publish it locally
@@ -28,8 +27,13 @@ and then in `build.gradle.kts` apply the plugin
 ```kotlin
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.3.71"
-    id("com.github.ashishkujoy.greeting") version "0.0.1"
+    id("io.github.ashishkujoy.embeddedKafka") version "0.0.1"
     application
+}
+
+embeddedKafka {
+    kafkaPort = 9999 // default value 9092
+    zookeeperPort = 9876 // default value 6000
 }
 ```
 

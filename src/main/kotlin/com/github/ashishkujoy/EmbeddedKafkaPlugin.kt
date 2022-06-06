@@ -13,7 +13,7 @@ import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
 import org.jetbrains.kotlin.gradle.plugin.KotlinSourceSet
 import scala.Predef
 
-class MyPlugin: Plugin<Project> {
+class EmbeddedkafkaPlugin: Plugin<Project> {
     override fun apply(project: Project) {
         val extension = project.extensions.create<KafkaPluginExtension>("embeddedKafka")
 
@@ -24,20 +24,6 @@ class MyPlugin: Plugin<Project> {
         project.tasks.register("stopEmbeddedKafka", StopKafkaTask::class.java) {
             group = "embeddedKafkaTasks"
         }
-
-//        project.task("stopEmbeddedKafka") {
-//            doFirst {
-//                val server = project.extensions["kafka"] as EmbeddedK
-//                EmbeddedKafka.stop(server)
-//            }
-//        }
-
-//        val integrationTestTask = project
-//            .getTasksByName("integrationTest", true)
-//            .first()
-//
-//        integrationTestTask?.dependsOn("startEmbeddedKafka")
-//        integrationTestTask?.finalizedBy("stopEmbeddedKafka")
     }
 
 
