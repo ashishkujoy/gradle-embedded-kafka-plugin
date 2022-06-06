@@ -3,7 +3,8 @@ plugins {
     `kotlin-dsl-base`
     java
     id("org.jetbrains.kotlin.jvm") version "1.3.71"
-    id("maven-publish")
+    id("maven-publish") 
+    id("com.gradle.plugin-publish") version "0.18.0" 
 }
 
 group = "io.github.ashishkujoy.embeddedKafka"
@@ -35,5 +36,16 @@ gradlePlugin {
         id = "io.github.ashishkujoy.embeddedKafka"
         implementationClass = "com.github.ashishkujoy.EmbeddedkafkaPlugin"
         version = version
+        description = "A plugin to start/stop embedded kafka"
+        displayName = "Embedded Kafka"
     }
 }
+
+
+
+pluginBundle {
+    website = "https://github.com/ashishkujoy/gradle-embedded-kafka-plugin"   
+    vcsUrl = "https://github.com/ashishkujoy/gradle-embedded-kafka-plugin"   
+    tags = listOf("kafka", "embedded kafka") 
+}
+
