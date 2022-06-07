@@ -1,5 +1,7 @@
 ### Embedded Kafka Plugin
-This plugin provides two tasks `startEmbeddedKafka` and `stopEmbeddedKafka` for starting and stoping embedded kafka.
+This [plugin](https://plugins.gradle.org/plugin/io.github.ashishkujoy.embeddedKafka) provides two tasks `startEmbeddedKafka` and `stopEmbeddedKafka` for starting and stoping embedded kafka.
+
+
 
 #### Using locally
 For using plugin locally we first need to build and publish it locally
