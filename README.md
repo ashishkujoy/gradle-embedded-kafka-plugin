@@ -35,5 +35,17 @@ embeddedKafka {
     kafkaPort = 9999 // default value 9092
     zookeeperPort = 9876 // default value 6000
 }
+
+
+tasks.withType<Test> {
+    useJUnitPlatform()
+
+    testLogging {
+        events(PASSED, FAILED, SKIPPED)
+    }
+    
+    dependsOn("startEmbeddedKafka")
+    finalizedBy("stopEmbeddedKafka")
+}
 ```
 
