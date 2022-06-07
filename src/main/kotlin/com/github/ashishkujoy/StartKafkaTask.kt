@@ -18,7 +18,7 @@ open class StartKafkaTask : DefaultTask() {
             val server = EmbeddedKafka.start(
                 EmbeddedKafkaConfig.apply(
                 extension.kafkaPort,
-                EmbeddedKafkaConfig.defaultZookeeperPort(),
+                extension.zookeeperPort,
                 Predef.Map().empty(),
                 Predef.Map().empty(),
                 Predef.Map().empty()
